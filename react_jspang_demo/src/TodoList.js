@@ -1,4 +1,6 @@
 import React, {Component, Fragment} from "react";
+// antd
+import { Button } from 'antd';
 import TodoListItem from "./TodoListItem";
 
 class TodoList extends Component{
@@ -50,7 +52,8 @@ class TodoList extends Component{
                 <div>
                     <label htmlFor="jspang">Add todo</label>
                     <input value={this.state.inputValue} onChange={this.inputChange.bind(this)}/>
-                    <button onClick={this.addList.bind(this)}>add</button>
+                    {/* <button onClick={this.addList.bind(this)}>add</button> */}
+                    <Button type="primary" onClick={this.addList.bind(this)}>add</Button>
                 </div>
                 <ul>
                     {
