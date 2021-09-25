@@ -1,13 +1,14 @@
 import React, {Component, Fragment} from "react";
 // antd
-import { Button } from 'antd';
+import { Button, Input } from "antd";
+import { BulbOutlined } from '@ant-design/icons';
 import TodoListItem from "./TodoListItem";
 
 class TodoList extends Component{
     constructor(props){
         super(props)
         this.state = {
-            inputValue: "gogo",
+            inputValue: "",
             list: [
                 'waf',
                 'firewall'
@@ -51,7 +52,8 @@ class TodoList extends Component{
                 {/* 活动列表 */}
                 <div>
                     <label htmlFor="jspang">Add todo</label>
-                    <input value={this.state.inputValue} onChange={this.inputChange.bind(this)}/>
+                    {/* <input value={this.state.inputValue} onChange={this.inputChange.bind(this)}/> */}
+                    <Input placeholder="Todo" prefix={<BulbOutlined />} style={{ width: '20%' }} value={this.state.inputValue} onChange={this.inputChange.bind(this)}/>
                     {/* <button onClick={this.addList.bind(this)}>add</button> */}
                     <Button type="primary" onClick={this.addList.bind(this)}>add</Button>
                 </div>
