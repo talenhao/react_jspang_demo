@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
+// antd
+import { List } from 'antd';
 import PropTypes from 'prop-types';
+
 
 class TodoListItem extends Component {
     constructor(props){
@@ -14,13 +17,19 @@ class TodoListItem extends Component {
 
     render() {
         return (
-            <li 
-                key={this.props.diffkey}
+            <List.Item
                 onClick={this.handleClick}
-                >
-                {this.props.content} @
-                {this.props.username}
-            </li>
+            >
+                {/* <li 
+                    // key={this.props.diffkey}
+                    onClick={this.handleClick}
+                > */}
+                    {this.props.index}
+                    &nbsp;
+                    {this.props.content} @
+                    {this.props.username}
+                {/* </li> */}
+            </List.Item>
         );
     }
 }
@@ -28,8 +37,8 @@ class TodoListItem extends Component {
 TodoListItem.propTypes = {
     content: PropTypes.string,
     delItem: PropTypes.func,
-    index: PropTypes.number,
-    diffkey: PropTypes.string,
+    // index: PropTypes.number,
+    // diffkey: PropTypes.string,
     username: PropTypes.string.isRequired
 }
  
