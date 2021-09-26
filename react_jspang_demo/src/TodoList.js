@@ -83,12 +83,12 @@ class TodoList extends Component {
             <Fragment>
                 {/* 活动列表 */}
                 <div style={{ margin: '10px', width: '500px' }}>
-                    <label htmlFor="haotianfei" style={{ margin: '10px' }}>Add todo</label>
+                    <label htmlFor="haotianfei" style={{ margin: '10px' }}><font size='3'>Add todo</font></label>
                     {/* <input value={this.state.inputValue} onChange={this.inputChange.bind(this)}/> */}
                     <Input
                         placeholder={this.state.inputValue}
                         prefix={<BulbOutlined />}
-                        style={{ width: '320px', marginRight: '10px' }}
+                        style={{ width: '349px', marginRight: '10px', marginBottom: '10px'}}
                         onChange={this.inputChange.bind(this)}
                         value={this.state.inputValue}
                         />
@@ -100,37 +100,38 @@ class TodoList extends Component {
                         >
                         Add
                     </Button>
-                </div>
-                <List
-                    bordered
-                    dataSource={this.state.list}
-                    renderItem={(item, index) => (
-                        <TodoListItem
-                            content={item}
-                            // diffkey={index+item}
-                            // key={index+item}
-                            index={index}
-                            username="tianfei"
-                            delItem={this.delItem.bind(this)}
-                        />
-                    )}
-                />
-                {/* <ul>{
-                        this.state.list.map(
-                            (item, index) => {
-                                return(
-                                    <TodoListItem
-                                    content={item}
-                                    diffkey={index+item}
-                                    key={index+item}
-                                    index={index}
-                                    username="haotianfei"
-                                    delItem={this.delItem.bind(this)}
-                                    />
+                    <List
+                        bordered
+                        dataSource={this.state.list}
+                        renderItem={(item, index) => (
+                            <TodoListItem
+                                content={item}
+                                // diffkey={index+item}
+                                // key={index+item}
+                                index={index}
+                                username="tianfei"
+                                delItem={this.delItem.bind(this)}
+                            />
+                        )}
+                    />
+                    {/* <ul>{
+                            this.state.list.map(
+                                (item, index) => {
+                                    return(
+                                        <TodoListItem
+                                        content={item}
+                                        diffkey={index+item}
+                                        key={index+item}
+                                        index={index}
+                                        username="haotianfei"
+                                        delItem={this.delItem.bind(this)}
+                                        />
+                                        )
+                                    }
                                     )
                                 }
-                                )
-                            }</ul> */}
+                    </ul> */}
+                </div>
             </Fragment>
         )
     }
