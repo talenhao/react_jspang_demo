@@ -4,7 +4,8 @@ import { Button, Input, List } from "antd";
 import { BulbOutlined } from '@ant-design/icons';
 import TodoListItem from "./TodoListItem";
 import store from "./store";
-import { DEL_ITEM, ADD_TO_LIST, INPUT_CHANGE } from "./store/actionTypes";
+// import { DEL_ITEM, ADD_TO_LIST, INPUT_CHANGE } from "./store/actionTypes";
+import { addToListAction, delItemAction, inputChangeAction } from "./store/actionCreator";
 
 class TodoList extends Component {
     constructor(props) {
@@ -31,17 +32,18 @@ class TodoList extends Component {
 
 
     inputChange(e) {
-        console.log(e.target.value)
+        // console.log(e.target.value)
         // this.setState(
         //     {
         //         inputValue: e.target.value
         //     }
         // )
         // 使用redux
-        const action = {
-            type: INPUT_CHANGE,
-            value: e.target.value
-        }
+        // const action = {
+        //     type: INPUT_CHANGE,
+        //     value: e.target.value
+        // }
+        const action = inputChangeAction(e.target.value)
         store.dispatch(action)
     }
 
@@ -51,9 +53,10 @@ class TodoList extends Component {
         //         list: [...this.state.list, this.state.inputValue]
         //     }
         // )
-        const action = {
-            type: ADD_TO_LIST
-        }
+        // const action = {
+        //     type: ADD_TO_LIST
+        // }
+        const action = addToListAction()
         store.dispatch(action)
     }
 
@@ -67,10 +70,11 @@ class TodoList extends Component {
         //         list: list
         //     }
         // )
-        const action={
-            type: DEL_ITEM,
-            index
-        }
+        // const action={
+        //     type: DEL_ITEM,
+        //     index
+        // }
+        const action=delItemAction(index)
         store.dispatch(action)
     }
 
