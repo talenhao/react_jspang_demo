@@ -4,6 +4,7 @@ import { Button, Input, List } from "antd";
 import { BulbOutlined } from '@ant-design/icons';
 import TodoListItem from "./TodoListItem";
 import store from "./store";
+import { DEL_ITEM, ADD_TO_LIST, INPUT_CHANGE } from "./store/actionTypes";
 
 class TodoList extends Component {
     constructor(props) {
@@ -38,7 +39,7 @@ class TodoList extends Component {
         // )
         // 使用redux
         const action = {
-            type: "inputChange",
+            type: INPUT_CHANGE,
             value: e.target.value
         }
         store.dispatch(action)
@@ -51,7 +52,7 @@ class TodoList extends Component {
         //     }
         // )
         const action = {
-            type: 'addToList'
+            type: ADD_TO_LIST
         }
         store.dispatch(action)
     }
@@ -67,7 +68,7 @@ class TodoList extends Component {
         //     }
         // )
         const action={
-            type: 'delItem',
+            type: DEL_ITEM,
             index
         }
         store.dispatch(action)
