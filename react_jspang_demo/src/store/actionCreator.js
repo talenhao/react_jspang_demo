@@ -1,4 +1,4 @@
-import { INPUT_CHANGE, DEL_ITEM, ADD_TO_LIST } from "./actionTypes";
+import { INPUT_CHANGE, DEL_ITEM, ADD_TO_LIST, GET_LIST } from "./actionTypes";
 
 
 // 由于大括号被解释为代码块，所以如果箭头函数直接返回一个对象，必须在对象外面加上括号，否则会报错。
@@ -18,4 +18,9 @@ export const addToListAction = () => ({
 export const delItemAction = (index) => ({
     type: DEL_ITEM,
     index
+})
+
+export const getListAction = (data) => ({
+    type: GET_LIST,
+    data
 })

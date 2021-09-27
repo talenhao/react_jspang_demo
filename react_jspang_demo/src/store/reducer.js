@@ -1,11 +1,11 @@
-import { DEL_ITEM, ADD_TO_LIST, INPUT_CHANGE } from "./actionTypes"
+import { DEL_ITEM, ADD_TO_LIST, INPUT_CHANGE, GET_LIST } from "./actionTypes"
 
 
 const defaultState = {
     inputValue : 'Write Todo',
     list : [
-        'waf',
-        'firewall'
+        // 'waf',
+        // 'firewall'
     ]
 }
 
@@ -26,6 +26,11 @@ const defaultReducer = (state = defaultState, action) => {
     if (action.type === DEL_ITEM) {
         let newState = JSON.parse(JSON.stringify(state))
         newState.list.splice(action.index, 1)
+        return newState
+    }
+    if (action.type === GET_LIST) {
+        let newState = JSON.parse(JSON.stringify(state))
+        newState.list = action.data.list
         return newState
     }
     return state

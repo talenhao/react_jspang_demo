@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { List } from 'antd';
 import PropTypes from 'prop-types';
 
-
+// 可以使用函数将类修改成无状态组件
 class TodoListItemUI extends Component {
     constructor(props){
         super(props)
